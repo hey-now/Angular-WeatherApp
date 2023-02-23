@@ -81,7 +81,27 @@ body {
 .location {
   color: var(--white);
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.5em;
+}
+
+.feels-like {
+  color: var(--gray-1);
+  padding-top: 1rem;
+}
+
+.condition {
+  color: var(--white);
+  padding-top: 1rem;
+  font-size: large;
+  font-weight: 700;
+}
+
+.condition-text {
+  padding: 10px;
+}
+.condition img {
+  height: 100px;
+  width: 100px;
 }
 
 .temperature {
@@ -101,6 +121,7 @@ body {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   margin-top: 1em;
+  padding: 10px;
 
   display: flex;
   flex-direction: row;

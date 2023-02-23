@@ -1,15 +1,23 @@
-<div class="container">
+<div class="container" *ngIf="weatherData">
   <div class="upper-data">
-    <img src="../assets/RS39314_GettyImages-824845572-scr.jpg" alt="hot-day" *ngIf="14 < 15">
-    <img src="../assets/221220154109-01-cold-weather-safety.jpg" alt="cold-day" *ngIf="15 < 14">
+    <img src="../assets/RS39314_GettyImages-824845572-scr.jpg" alt="hot-day" *ngIf="weatherData.current.feelslike_f > 65">
+    <img src="../assets/221220154109-01-cold-weather-safety.jpg" alt="cold-day" *ngIf="weatherData.current.feelslike_f <= 65">
     <div class="weather-data">
-      <div class="location">City</div>
-      <div class="temperature">{{ 67.30 | number: '1.0-0' }}°F</div>
+      <div class="location">{{ weatherData.location.name }}</div>
+      <div class="feels-like">Feels Like</div>
+      <div class="temperature">{{ weatherData.current.feelslike_f | number: '1.0-0' }}°F</div>
+      <div class="condition">
+        <img class="condition-image" src={{weatherData.current.condition.icon}} alt={{weatherData.current.condition.text}}>
+        <div class="condition-text">Current: {{ weatherData.current.temp_f | number: '1.0-0' }}°F</div>
+        <div class="condition-text">
+          {{ weatherData.current.condition.text }}
+        </div>
+      </div>
     </div>
   </div>
   <div class="lower-data">
     <div class="more-info-label">
-      Today
+      Last Update: {{ weatherData.current.last_updated }}
     </div>
     <div class="more-info-container">
       <div class="info-block">
@@ -18,7 +26,7 @@
           <span>Min</span>
         </div>
         <div class="info-block-value">
-          45°F
+          {{ weatherData.Day.maxtemp_f| number: '1.0-0' }} °F
         </div>
       </div>
       <div class="info-block">
@@ -37,6 +45,24 @@
         </div>
         <div class="info-block-value">
           75°F
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-block-label">
+          <span class="material-symbols-outlined" id="icon">Water</span>
+          <span>Humidity</span>
+        </div>
+        <div class="info-block-value">
+          75%
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-block-label">
+          <span class="material-symbols-outlined" id="icon">Water</span>
+          <span>Humidity</span>
+        </div>
+        <div class="info-block-value">
+          75%
         </div>
       </div>
       <div class="info-block">
