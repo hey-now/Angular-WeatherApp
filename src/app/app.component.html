@@ -1,9 +1,15 @@
+<div class="search">
+  <form #form="ngForm" (submit)="onSubmit()" >
+    <input type="text" placeholder="Enter City" name="city" [(ngModel)]="cityName">
+  </form>
+</div>
 <div class="container" *ngIf="weatherData">
   <div class="upper-data">
     <img src="../assets/RS39314_GettyImages-824845572-scr.jpg" alt="hot-day" *ngIf="weatherData.current.feelslike_f > 65">
     <img src="../assets/221220154109-01-cold-weather-safety.jpg" alt="cold-day" *ngIf="weatherData.current.feelslike_f <= 65">
     <div class="weather-data">
-      <div class="location">{{ weatherData.location.name }}</div>
+      <div class="location">{{ weatherData.location.name }}, {{ weatherData.location.region }}</div>
+      <div class="country">{{ weatherData.location.country }}</div>
       <div class="feels-like">Feels Like</div>
       <div class="temperature">{{ weatherData.current.feelslike_f | number: '1.0-0' }}°F</div>
       <div class="condition">
