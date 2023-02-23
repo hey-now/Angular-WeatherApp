@@ -1,5 +1,5 @@
 export const environment = {
-  weatherApiBaseUrl: 'https://weatherapi-com.p.rapidapi.com/current.json',
+  weatherApiBaseUrl: 'https://weatherapi-com.p.rapidapi.com/forecast.json',
   XRapidAPIHostHeaderName: 'X-RapidAPI-Host',
   XRapidAPIHostHeaderValue: 'weatherapi-com.p.rapidapi.com',
   XRapidAPIKeyHeaderName: 'X-RapidAPI-Key',

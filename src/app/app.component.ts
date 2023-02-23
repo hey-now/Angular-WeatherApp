@@ -8,7 +8,6 @@ import { WeatherService } from './services/weather.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Angular Weather App';
 
   constructor(private weatherService: WeatherService) {
 

@@ -1,1 +1,1 @@
-Weather App tto showcase Angular and API capability.
+Weather App to showcase Angular and API capability.
