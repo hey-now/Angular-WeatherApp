@@ -166,11 +166,13 @@ body {
   justify-content: center;
   align-items: center;
   color: var(--white);
+  padding-right: 5px;
 }
 
 #icon {
   font-size: x-large;
   padding-bottom: 1rem;
+  padding-right: 5px;
 }
 
 .search {
@@ -236,4 +238,5 @@ a {
  padding-left: 10px;
  color: var(--white);
  font-weight: 800;
+ width: 100%;
 }

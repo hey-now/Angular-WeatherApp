@@ -20,5 +20,17 @@
   <div class="hour" *ngFor="let number of numbers">
     <img src={{weatherData.forecast.forecastday[0].hour[number].condition.icon}} alt={{weatherData.forecast.forecastday[0].hour[0].condition.text}}>
     <div class="hour-text">{{ weatherData.forecast.forecastday[0].hour[number].time | date: 'shortTime'}}</div>
+    <div class="info-block-label">
+      <span class="material-symbols-outlined" id="icon">Thermostat</span>
+    </div>
+    <div class="info-block-value">
+      {{ weatherData.forecast.forecastday[0].hour[number].temp_f | number: '1.0-0' }}°F
+    </div>
+    <div class="info-block-label">
+      <span class="material-symbols-outlined" id="icon">rainy</span>
+    </div>
+    <div class="info-block-value">
+      {{ weatherData.forecast.forecastday[0].hour[number].chance_of_rain }}%
+    </div>
   </div>
 </div>

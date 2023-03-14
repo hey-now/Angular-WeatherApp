@@ -11,7 +11,7 @@ import { WeatherData } from '../models/weather.model';
 export class HourlyComponent {
   numbers = [];
   constructor() {
-    this.numbers = Array(25).fill(25).map((x,i)=>i);
+    this.numbers = Array(24).fill(24).map((x,i)=>i);
   }
 
   @Input() weatherData: WeatherData;
