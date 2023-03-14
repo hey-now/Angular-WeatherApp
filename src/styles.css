@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --blue-1: #3C429E;
-  --blue-2: #4C52AD;
+  --blue-1: #2a7adc;
+  --blue-2: #4780e3;
   --yellow-1: #FAC742;
   --white: #FFF;
   --gray-1: #EDEDED;
@@ -186,4 +186,36 @@ body {
   padding: 1em;
   font-size: 0.8em;
   text-align: center;
+  color: var(--white);
+}
+
+::placeholder {
+  color: var(--white);
+}
+
+.forecast {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: center;
+}
+.forecast-button {
+  background-color: var(--gray-1);
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 10px 10px 10px var(--shadow-dark);
+  margin-right: 10px;
+  color: var(--blue-2);
+  font-weight: 700;
+  width: 100px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.active-link {
+  background-color: var(--blue-1);
+  color: var(--white);
 }

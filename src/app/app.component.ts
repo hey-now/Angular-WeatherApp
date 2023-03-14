@@ -14,10 +14,13 @@ export class AppComponent implements OnInit {
   }
   cityName: string = 'Long Beach'; 
   weatherData?: WeatherData;
+  isActive;
 
   ngOnInit(): void {
     this.getWeatherData(this.cityName);
     this.cityName = '';
+    this.isActive = 1;
+
   }
 
   onSubmit() {

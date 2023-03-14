@@ -1,0 +1,56 @@
+<div class="info-block">
+  <div class="info-block-label">
+    <span style="color: blue;" class="material-symbols-outlined" id="icon">ac_Unit</span>
+    <span>Min</span>
+  </div>
+  <div class="info-block-value">
+    {{ weatherData.forecast.forecastday[0].day.mintemp_f | number: '1.0-0' }}°F
+  </div>
+</div>
+<div class="info-block">
+  <div class="info-block-label">
+    <span style="color: red;" class="material-symbols-outlined" id="icon">Thermostat</span>
+    <span>Max</span>
+  </div>
+  <div class="info-block-value">
+    {{ weatherData.forecast.forecastday[0].day.maxtemp_f| number: '1.0-0' }}°F
+  </div>
+</div>
+<div class="info-block">
+  <div class="info-block-label">
+    <span class="material-symbols-outlined" id="icon">Air</span>
+    <span>Wind</span>
+  </div>
+  <div class="info-block-value">
+    {{ weatherData.current.gust_mph | number: '1.0-0' }} mph
+  </div>
+</div>
+<div class="info-block">
+  <div class="info-block-label">
+    <span class="material-symbols-outlined" id="icon">Water</span>
+    <span>Humidity</span>
+  </div>
+  <div class="info-block-value">
+    {{ weatherData.current.humidity }}%
+  </div>
+</div>
+<div class="info-block">
+  <div class="info-block-label">
+    <span class="material-symbols-outlined" id="icon">Sunny</span>
+    <span>UV Index</span>
+  </div>
+  <div class="info-block-value">
+    {{ weatherData.current.uv }}
+  </div>
+</div>
+<div class="info-block">
+  <div class="info-block-label">
+    <span class="material-symbols-outlined" id="icon"><span class="material-symbols-outlined">
+      nest_farsight_weather
+      </span></span>
+    <span>Cloud</span>
+  </div>
+  <div class="info-block-value">
+    {{ weatherData.current.cloud }}%
+  </div>
+</div>

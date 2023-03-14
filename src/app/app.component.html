@@ -25,119 +25,17 @@
     <div class="more-info-label">
       Last Update: {{ weatherData.current.last_updated }}
     </div>
-    <div class="more-info-container">
-      <div class="info-block">
-        <div class="info-block-label">
-          <span style="color: blue;" class="material-symbols-outlined" id="icon">ac_Unit</span>
-          <span>Min</span>
-        </div>
-        <div class="info-block-value">
-          {{ weatherData.forecast.forecastday[0].day.mintemp_f | number: '1.0-0' }}°F
-        </div>
-      </div>
-      <div class="info-block">
-        <div class="info-block-label">
-          <span style="color: red;" class="material-symbols-outlined" id="icon">Thermostat</span>
-          <span>Max</span>
-        </div>
-        <div class="info-block-value">
-          {{ weatherData.forecast.forecastday[0].day.maxtemp_f| number: '1.0-0' }}°F
-        </div>
-      </div>
-      <div class="info-block">
-        <div class="info-block-label">
-          <span class="material-symbols-outlined" id="icon">Air</span>
-          <span>Wind</span>
-        </div>
-        <div class="info-block-value">
-          {{ weatherData.current.gust_mph | number: '1.0-0' }} mph
-        </div>
-      </div>
-      <div class="info-block">
-        <div class="info-block-label">
-          <span class="material-symbols-outlined" id="icon">Water</span>
-          <span>Humidity</span>
-        </div>
-        <div class="info-block-value">
-          {{ weatherData.current.humidity }}%
-        </div>
-      </div>
-      <div class="info-block">
-        <div class="info-block-label">
-          <span class="material-symbols-outlined" id="icon">Sunny</span>
-          <span>UV Index</span>
-        </div>
-        <div class="info-block-value">
-          {{ weatherData.current.uv }}
-        </div>
-      </div>
-      <div class="info-block">
-        <div class="info-block-label">
-          <span class="material-symbols-outlined" id="icon"><span class="material-symbols-outlined">
-            nest_farsight_weather
-            </span></span>
-          <span>Cloud</span>
-        </div>
-        <div class="info-block-value">
-          {{ weatherData.current.cloud }}%
-        </div>
-      </div>
+    <div class="forecast">
+      <a class="forecast-button" routerLink="current" routerLinkActive="active-link" (click)="isActive=1">
+        Current
+      </a>
+      <a class="forecast-button" routerLink="hourly" routerLinkActive="active-link" (click)="isActive=2">Hourly
+      </a>
+      <a class="forecast-button" routerLink="threeday" routerLinkActive="active-link" (click)="isActive=3">3 Day
+      </a>
     </div>
+    <app-current *ngIf="isActive === 1" class="more-info-container" [weatherData]="weatherData"></app-current>
+    <app-hourly *ngIf="isActive === 2" class="more-info-container" [weatherData]="weatherData"></app-hourly>
+    <app-three-day *ngIf="isActive === 3" class="more-info-container" [weatherData]="weatherData"></app-three-day>
   </div>
 </div>
-
-<!-- <div class="container">
-  <div class="upper-data">
-    <img src="../assets/RS39314_GettyImages-824845572-scr.jpg" alt="hot-day" *ngIf="14 < 15">
-    <img src="../assets/221220154109-01-cold-weather-safety.jpg" alt="cold-day" *ngIf="15 < 14">
-    <div class="weather-data">
-      <div class="location">City</div>
-      <div class="temperature">{{ 67.30 | number: '1.0-0' }}°F</div>
-    </div>
-  </div>
-  <div class="lower-data">
-    <div class="more-info-label">
-      Today
-    </div>
-    <div class="more-info-container">
-      <div class="info-block">
-        <div class="info-block-label">
-          <span class="material-symbols-outlined" id="icon">ac_unit</span>
-          <span>Min</span>
-        </div>
-        <div class="info-block-value">
-          45°F
-        </div>
-      </div>
-      <div class="info-block">
-        <div class="info-block-label">
-          <span class="material-symbols-outlined" id="icon">Air</span>
-          <span>Wind</span>
-        </div>
-        <div class="info-block-value">
-          12 mph
-        </div>
-      </div>
-      <div class="info-block">
-        <div class="info-block-label">
-          <span class="material-symbols-outlined" id="icon">sunny</span>
-          <span>Max</span>
-        </div>
-        <div class="info-block-value">
-          75°F
-        </div>
-      </div>
-      <div class="info-block">
-        <div class="info-block-label">
-          <span class="material-symbols-outlined" id="icon">Water</span>
-          <span>Humidity</span>
-        </div>
-        <div class="info-block-value">
-          75%
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<router-outlet></router-outlet>
