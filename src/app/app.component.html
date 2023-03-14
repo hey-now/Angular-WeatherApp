@@ -21,19 +21,19 @@
       </div>
     </div>
   </div>
+  <div class="more-info-label">
+    Last Update: {{ weatherData.current.last_updated }}
+  </div>
+  <div class="forecast">
+    <a class="forecast-button" routerLink="current" routerLinkActive="active-link" (click)="isActive=1">
+      Current
+    </a>
+    <a class="forecast-button" routerLink="hourly" routerLinkActive="active-link" (click)="isActive=2">Hourly
+    </a>
+    <a class="forecast-button" routerLink="threeday" routerLinkActive="active-link" (click)="isActive=3">3 Day
+    </a>
+  </div>
   <div class="lower-data">
-    <div class="more-info-label">
-      Last Update: {{ weatherData.current.last_updated }}
-    </div>
-    <div class="forecast">
-      <a class="forecast-button" routerLink="current" routerLinkActive="active-link" (click)="isActive=1">
-        Current
-      </a>
-      <a class="forecast-button" routerLink="hourly" routerLinkActive="active-link" (click)="isActive=2">Hourly
-      </a>
-      <a class="forecast-button" routerLink="threeday" routerLinkActive="active-link" (click)="isActive=3">3 Day
-      </a>
-    </div>
     <app-current *ngIf="isActive === 1" class="more-info-container" [weatherData]="weatherData"></app-current>
     <app-hourly *ngIf="isActive === 2" class="more-info-container" [weatherData]="weatherData"></app-hourly>
     <app-three-day *ngIf="isActive === 3" class="more-info-container" [weatherData]="weatherData"></app-three-day>
