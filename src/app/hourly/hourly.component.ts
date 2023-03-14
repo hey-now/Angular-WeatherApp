@@ -9,6 +9,10 @@ import { WeatherData } from '../models/weather.model';
   styleUrls: ['./hourly.component.css']
 })
 export class HourlyComponent {
+  numbers = [];
+  constructor() {
+    this.numbers = Array(25).fill(25).map((x,i)=>i);
+  }
 
   @Input() weatherData: WeatherData;
 }

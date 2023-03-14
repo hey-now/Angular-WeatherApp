@@ -1,1 +1,24 @@
-<p>hourly works!</p>
+<div class="info-block">
+  <div class="info-block-label">
+    <span style="color: yellow;" class="material-symbols-outlined" id="icon">wb_twilight</span>
+    <span>Sunrise</span>
+  </div>
+  <div class="info-block-value">
+    {{ weatherData.forecast.forecastday[0].astro.sunrise }}
+  </div>
+</div>
+<div class="info-block">
+  <div class="info-block-label">
+    <span style="color: orange;" class="material-symbols-outlined" id="icon">wb_twilight</span>
+    <span>Sunset</span>
+  </div>
+  <div class="info-block-value">
+    {{weatherData.forecast.forecastday[0].astro.sunset}}
+  </div>
+</div>
+<div class="hourly">
+  <div class="hour" *ngFor="let number of numbers">
+    <img src={{weatherData.forecast.forecastday[0].hour[number].condition.icon}} alt={{weatherData.forecast.forecastday[0].hour[0].condition.text}}>
+    <div class="hour-text">{{ weatherData.forecast.forecastday[0].hour[number].time | date: 'shortTime'}}</div>
+  </div>
+</div>
