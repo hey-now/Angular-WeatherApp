@@ -241,3 +241,6 @@ a {
  font-weight: 800;
  width: 100%;
 }
+p {
+  color: var(--white);
+}

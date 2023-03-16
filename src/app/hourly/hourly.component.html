@@ -32,5 +32,11 @@
     <div class="info-block-value">
       {{ weatherData.forecast.forecastday[0].hour[number].chance_of_rain }}%
     </div>
+    <div class="info-block-label">
+      <span class="material-symbols-outlined" id="icon">Air</span>
+    </div>
+    <div class="info-block-value">
+      {{ weatherData.forecast.forecastday[0].hour[number].gust_mph }} mph
+    </div>
   </div>
 </div>
