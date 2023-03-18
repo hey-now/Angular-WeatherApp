@@ -9,5 +9,11 @@ import { WeatherData } from '../models/weather.model';
   styleUrls: ['./three-day.component.css']
 })
 export class ThreeDayComponent {
+  day;
   @Input() weatherData: WeatherData;
+
+  
+  ngOnInit(): void {
+    this.day = 1;
+  }
 }

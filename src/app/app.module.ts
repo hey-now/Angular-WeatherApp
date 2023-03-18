@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { CurrentComponent } from './current/current.component';
 import { HourlyComponent } from './hourly/hourly.component';
 import { ThreeDayComponent } from './three-day/three-day.component';
+import { NextDayComponent } from './next-day/next-day.component';
+import { SecondDayComponent } from './second-day/second-day.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { ThreeDayComponent } from './three-day/three-day.component';
     CurrentComponent,
     HourlyComponent,
     ThreeDayComponent,
+    NextDayComponent,
+    SecondDayComponent,
   ],
   imports: [
     BrowserModule,

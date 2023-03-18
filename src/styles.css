@@ -139,6 +139,14 @@ body {
   flex-wrap: wrap;
 }
 
+.days {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: center;
+  border-top: 2px solid var(--shadow-light);
+}
+
 .info-block {
   width: 50%;
   padding-bottom: 2rem;
@@ -168,6 +176,7 @@ body {
   align-items: center;
   color: var(--white);
   padding-right: 5px;
+  text-align: center;
 }
 
 #icon {
@@ -212,6 +221,7 @@ body {
   font-weight: 700;
   width: 100px;
   text-align: center;
+  border: none;
 }
 
 a {
@@ -243,4 +253,7 @@ a {
 }
 p {
   color: var(--white);
+}
+button {
+  cursor: pointer;
 }

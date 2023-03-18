@@ -1,1 +1,10 @@
-<p>Coming Soon!</p>
+<div class="days">
+  <button class="forecast-button" [ngClass]="{'active-link': day === 1}" (click)="day=1">
+    {{ weatherData.forecast.forecastday[1].date | date: 'shortDate' }}
+  </button>
+  <button class="forecast-button" [ngClass]="{'active-link': day === 2}" (click)="day=2">
+    {{ weatherData.forecast.forecastday[2].date | date: 'shortDate' }}
+  </button>
+</div>
+<app-next-day *ngIf="day === 1" class="more-info-container" [weatherData]="weatherData"></app-next-day>
+<app-second-day *ngIf="day === 2" class="more-info-container" [weatherData]="weatherData"></app-second-day>

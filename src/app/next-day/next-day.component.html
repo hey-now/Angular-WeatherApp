@@ -1,10 +1,10 @@
 <div class="info-block">
   <div class="info-block-label">
     <span class="material-symbols-outlined" id="icon">rainy</span>
-    <span>Chance of Rain</span>
+    <span>Chance Rain</span>
   </div>
   <div class="info-block-value">
-    {{ weatherData.forecast.forecastday[0].day.daily_chance_of_rain }}%
+    {{ weatherData.forecast.forecastday[1].day.daily_chance_of_rain }}%
   </div>
 </div>
 <div class="info-block">
@@ -13,7 +13,7 @@
     <span>Max Temp</span>
   </div>
   <div class="info-block-value">
-    {{ weatherData.forecast.forecastday[0].day.maxtemp_f | number: '1.0-0'}}°F
+    {{ weatherData.forecast.forecastday[1].day.maxtemp_f | number: '1.0-0'}}°F
   </div>
 </div>
 <div class="info-block">
@@ -31,18 +31,18 @@
     <span>Sunset</span>
   </div>
   <div class="info-block-value">
-    {{weatherData.forecast.forecastday[0].astro.sunset}}
+    {{weatherData.forecast.forecastday[1].astro.sunset}}
   </div>
 </div>
 <div class="hourly">
   <div class="hour" *ngFor="let number of numbers">
-    <img src={{weatherData.forecast.forecastday[0].hour[number].condition.icon}} alt={{weatherData.forecast.forecastday[0].hour[0].condition.text}}>
-    <div class="hour-text">{{ weatherData.forecast.forecastday[0].hour[number].time | date: 'shortTime'}}</div>
+    <img src={{weatherData.forecast.forecastday[1].hour[number].condition.icon}} alt={{weatherData.forecast.forecastday[1].hour[number].condition.text}}>
+    <div class="hour-text">{{ weatherData.forecast.forecastday[1].hour[number].time | date: 'shortTime'}}</div>
     <div class="info-block-label">
       <span class="material-symbols-outlined" id="icon">Thermostat</span>
     </div>
     <div class="info-block-value">
-      {{ weatherData.forecast.forecastday[0].hour[number].temp_f | number: '1.0-0' }}°F
+      {{ weatherData.forecast.forecastday[1].hour[number].temp_f | number: '1.0-0' }}°F
     </div>
     <div class="info-block-label">
       <span class="material-symbols-outlined" id="icon">rainy</span>
@@ -54,7 +54,7 @@
       <span class="material-symbols-outlined" id="icon">Air</span>
     </div>
     <div class="info-block-value">
-      {{ weatherData.forecast.forecastday[0].hour[number].gust_mph | number: '1.0-0'}} mph
+      {{ weatherData.forecast.forecastday[0].hour[number].gust_mph | number: '1.0-0' }} mph
     </div>
   </div>
 </div>

@@ -88,7 +88,6 @@ export class AppComponent implements OnInit {
         this.weatherData = response;
         var condition = response.current.condition.text;
         this.pictureURL = this.Pictures.find(x => x.text === condition).picture;
-        console.log(this.pictureURL)
       }
     });
     return this.pictureURL;
@@ -98,7 +97,6 @@ export class AppComponent implements OnInit {
     this.weatherService.getWeatherData(cityName).subscribe({
       next: (response) => {
         this.weatherData = response;
-        console.log(response);
       }
     });
   }

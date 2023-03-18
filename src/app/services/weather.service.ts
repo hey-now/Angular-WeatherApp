@@ -11,12 +11,6 @@ export class WeatherService {
 
   constructor(private http: HttpClient) { }
 
-  getWeatherPicture(condition: string) {
-    var picture = [
-      {condition: 'Overcast', picture: '../assets/sunnyday.jpeg'},
-    ];
-    return picture;
-  }
   getWeatherData(cityName: string): Observable<WeatherData> {
    return this.http.get<WeatherData>(environment.weatherApiBaseUrl, {
       headers: new HttpHeaders()
@@ -25,6 +19,7 @@ export class WeatherService {
       ,
       params: new HttpParams()
         .set('q', cityName)
+        .set('days', 3)
     })
   }
 }

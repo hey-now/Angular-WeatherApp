@@ -1,7 +1,7 @@
 <div class="info-block">
   <div class="info-block-label">
     <span style="color: blue;" class="material-symbols-outlined" id="icon">ac_Unit</span>
-    <span>Min</span>
+    <span>Min Temp</span>
   </div>
   <div class="info-block-value">
     {{ weatherData.forecast.forecastday[0].day.mintemp_f | number: '1.0-0' }}°F
@@ -10,7 +10,7 @@
 <div class="info-block">
   <div class="info-block-label">
     <span style="color: red;" class="material-symbols-outlined" id="icon">Thermostat</span>
-    <span>Max</span>
+    <span>Max Temp</span>
   </div>
   <div class="info-block-value">
     {{ weatherData.forecast.forecastday[0].day.maxtemp_f| number: '1.0-0' }}°F
