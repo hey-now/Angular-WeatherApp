@@ -24,13 +24,13 @@
     Last Update: {{ weatherData.current.last_updated }}
   </div>
   <div class="forecast">
-    <a class="forecast-button" routerLink="current" routerLinkActive="active-link" (click)="isActive=1">
+    <button class="forecast-button" (click)="isActive=1" [ngClass]="{'active-link': isActive === 1}">
       Current
-    </a>
-    <a class="forecast-button" routerLink="hourly" routerLinkActive="active-link" (click)="isActive=2">Hourly
-    </a>
-    <a class="forecast-button" routerLink="threeday" routerLinkActive="active-link" (click)="isActive=3">3 Day
-    </a>
+    </button>
+    <button class="forecast-button" (click)="isActive=2" [ngClass]="{'active-link': isActive === 2}">Hourly
+    </button>
+    <button class="forecast-button"  (click)="isActive=3" [ngClass]="{'active-link': isActive === 3}">3 Day
+    </button>
   </div>
   <div class="lower-data">
     <app-current *ngIf="isActive === 1" class="more-info-container" [weatherData]="weatherData"></app-current>
