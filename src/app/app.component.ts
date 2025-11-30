@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   constructor(private weatherService: WeatherService) {
 
   }
-  cityName: string = 'Long Beach'; 
+  cityName: string = 'Marina del Rey'; 
   weatherData?: WeatherData;
   isActive;
   Pictures = [
